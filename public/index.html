@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-it</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+
+</head>
+<body>
+    <header>
+        <div class="header">
+            <button id="newPost" onclick="openClosePostit()">New-Post</button>
+            <h1 id="main-title">Post-it</h1>
+        </div>
+    </header>
+
+    <main id="postsContainer">
+        <div id="posts" class="posts">
+
+        </div>
+    </main>
+
+
+    <!-- Form -->
+    <div class="form">
+        <div class="container">
+            <h3 id="titleForm">New-Post</h3>
+            <button id="closeForm" onclick="openClosePostit()" ></button>
+            <div class="formItemsContainer">
+                <label class="labelForm" for="title">Title:</label>
+                <input class="formItems" type="text" id="title" placeholder="Title">
+                <label class="labelForm" for="description">Description:</label>
+                <textarea class="formItems" id="description" placeholder="Description" cols="30" rows="10"></textarea>
+            </div>
+            <button id="send" onclick="newpost()">Post-it</button>
+            
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    
+</body>
+</html>
