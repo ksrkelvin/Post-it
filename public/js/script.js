@@ -31,7 +31,7 @@ function updatePost(){
         posts.forEach((post) => {
             let postElement = `
             <div id=${post.id} class="card" draggable="true">
-                <button class="trashbtn" onclick="trashbtn()"></button>
+                <button class="trashbtn" onclick="trashbtn(this)"></button>
                 <div class="card-header">
                     <h5 class="card-title">${post.title}</h5>
                 </div>
@@ -69,5 +69,25 @@ function newpost(){
     openClosePostit()
     updatePost()
 
+
+}
+
+
+function trashbtn(e){
+    
+    let pai = e.parentNode.id
+    
+    let del = {id: pai}
+    const options = {
+        method: "DELETE",
+        headers: new Headers({'content-type':'application/json'}),
+        body: JSON.stringify(del)
+    }
+
+
+    fetch("http://192.168.0.113:3000/api/del", options).then(res=>{
+        console.log(res)
+    })
+    updatePost()
 
 }
